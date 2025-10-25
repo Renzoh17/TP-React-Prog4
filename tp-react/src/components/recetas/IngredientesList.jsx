@@ -1,24 +1,19 @@
-// src/components/recetas/IngredientesList.jsx
-
 import { Alert } from '@mui/material';
 import { Typography, List, ListItem, ListItemText, Divider, Box } from '@mui/material';
 
-/**
- * Muestra la lista de ingredientes de una receta.
- * @param {Array<Object>} ingredientes - El array de ingredientes de la receta.
- */
+// Muestra la lista de ingredientes de una receta
 function IngredientesList({ ingredientes }) {
     if (!ingredientes || ingredientes.length === 0) {
         return <Alert severity="info">No se ha especificado la lista de ingredientes.</Alert>;
     }
 
     return (
-        <Box mb={4}>
-            <Typography variant="h5" component="h2" gutterBottom>
+        <Box mb={4} sx={{ color: 'black' }}>
+            <Typography variant="h5" component="h2" gutterBottom sx={{ textDecoration: 'underline', textDecorationStyle: 'wavy' }}>
                 Lista de Ingredientes
             </Typography>
             
-            {/* Implementación de lista con viñetas (usando los estilos previamente corregidos) */}
+            {/* Implementación de lista con viñetas */}
             <List 
                 dense 
                 component="ul"
@@ -40,7 +35,7 @@ function IngredientesList({ ingredientes }) {
                                 // Combina cantidad, unidad y nombre
                                 `${ing.cantidad} ${ing.unidad} de ${ing.nombre}` 
                             }
-                            // Opcional: puedes usar secondary para más detalles
+                            // Opcional: se puede usar secondary para más detalles
                             // secondary={ing.unidad} 
                         />
                     </ListItem>

@@ -1,4 +1,3 @@
-// RecetasContext.jsx
 import { createContext, useContext, useEffect, useState } from "react";
 
 const RecetasContext = createContext(null);

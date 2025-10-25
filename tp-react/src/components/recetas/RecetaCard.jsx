@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'; // Ejemplo de icono adicional
 import { Star } from '@mui/icons-material';
 
 function RecetaCard({ receta, onVerReceta }) {
@@ -35,14 +34,12 @@ function RecetaCard({ receta, onVerReceta }) {
       flexDirection: 'column',
       '&:hover': {
         boxShadow: 6, // Efecto hover para la tarjeta
-      }
+      },
+      backgroundColor: '#71d1e9ff'
     }}>
       <CardMedia
         component="img"
         height="180"
-        // Asegúrate de que las rutas de las imágenes sean correctas
-        // Si las imágenes están en 'public/images/', la ruta sería '/images/nombre.jpg'
-        // Si están en 'src/assets/', necesitarías importarlas: import img from '../assets/img.jpg';
         image={receta.imagen || 'https://via.placeholder.com/300x180?text=Receta'} 
         alt={receta.titulo}
       />
@@ -56,7 +53,7 @@ function RecetaCard({ receta, onVerReceta }) {
               label={receta.tiempoPreparacion} 
               size="small" 
               variant="outlined"
-              sx={{ mb: 1 }}
+              sx={{ mb: 1, borderColor: 'black'}}
             />
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
@@ -65,6 +62,7 @@ function RecetaCard({ receta, onVerReceta }) {
                 label={`${receta.porciones} porciones`}
                 size="small"
                 variant="outlined"
+                sx={{ borderColor: 'black'}}
               />
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
@@ -73,12 +71,13 @@ function RecetaCard({ receta, onVerReceta }) {
                 label={`Dificultad`}
                 size="small"
                 variant="outlined"
+                sx={{ borderColor: 'black' }}
               />
             <Chip 
               label={receta.dificultad} 
               color={getDificultadColor(receta.dificultad)} 
               size="small" 
-              sx={{ ml: 1 }}
+              sx={{ ml: 1, color: 'black' }}
           />
         </Box>
 

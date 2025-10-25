@@ -41,15 +41,13 @@
   color: #888;
 }
 
-/* src/index.css o src/App.css */
-
 body, 
 #root, 
 #root > div {
     /* Color celeste claro: AliceBlue */
     background-color: #b7effd; 
     
-    /* Asegura que el fondo cubra toda la altura de la ventana */
+    /* Cubre toda la altura de la ventana */
     min-height: 100vh;
     
     /* Evita que el fondo se repita si el contenido es corto */

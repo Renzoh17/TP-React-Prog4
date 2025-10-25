@@ -1,6 +1,6 @@
 
-import { Container, Typography, Grid, CircularProgress, Alert } from '@mui/material';
-import RecetaCard from '../components/recetas/RecetaCard';
+import { Container, Typography, CircularProgress, Alert } from '@mui/material';
+import RecetaList from '../components/recetas/RecetasList';
 import { RecetasProvider, useRecetas } from '../contexts/RecetasContext';
 import { useNavigate } from 'react-router-dom'; 
 
@@ -40,26 +40,16 @@ function RecetasContent() {
     }
 
     return (
-      <Container maxWidth="lg" sx={{ py: 4 }}>
-        <Typography variant="h3" component="h1" gutterBottom align="center" sx={{ mb: 4 , fontWeight: 'bold', color: 'black'}}>
-          Nuestras Recetas
-        </Typography>
-        
-        <Grid container spacing={4}>
-          {recetas.map((receta) => (
-            <Grid key={receta.id} size={{xs: 12, sm:6, md:4, lg:3}}>
-              <RecetaCard 
-                receta={receta} 
-                onVerReceta={handleVerReceta} 
-              />
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+
+      <RecetaList 
+      recetas={recetas} 
+      onVerReceta={handleVerReceta} 
+      />
+
     );
 }
 
-// 2. Componente principal que EXPORTA y ENVUELVE al contenido
+// Componente principal que EXPORTA y ENVUELVE al contenido
 function RecetasPage() {
     // RecetasPage ahora solo se encarga de proporcionar el contexto
     return (
